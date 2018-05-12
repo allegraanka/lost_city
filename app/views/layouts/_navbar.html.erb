@@ -1,0 +1,18 @@
+<nav class="navbar">
+
+  <div class="logo_div">
+    <h1> <%= link_to (image_tag "lost_city_logo.jpg", class: "lost_city_logo"), root_path %> </h1>
+  </div>
+
+  <div class="">
+    <ul class="nav_list">
+      <% if user_signed_in? %>
+        <li> <%= link_to "New Post", new_post_path %> </li>
+        <li> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </li>
+      <% else %>
+        <li> <%= link_to "Sign In", new_user_session_path %> </li>
+        <li> <%= link_to "Sign Up", new_user_registration_path %> </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,34 @@
+<h1>
+  <div class="username">
+    User Name
+  </div>
+</h1>
+
+<div class="posts-wrapper row">
+  <div class="post">
+
+    <div class="post-head">
+      <div class="username">
+        User Name
+      </div>
+    </div>
+
+    <div class="image center-block">
+      <%= image_tag @post.image.url(:medium) %>
+    </div>
+
+    <p class="caption">
+      <%= @post.caption %>
+    </p>
+
+  </div>
+</div>
+
+<div class="posts-wrapper">
+  <div class="text-center edit-links">
+    <%= link_to "Edit Post", edit_post_path(@post) %>
+  </div>
+  <div class="text-center">
+    <%= link_to "Cancel", posts_path %>
+  </div>
+</div>
