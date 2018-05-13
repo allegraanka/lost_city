@@ -1,6 +1,6 @@
 <h1>
   <div class="username">
-    hi, <%= post.user.user_name %>
+    hi, <%= @post.user.user_name %>
   </div>
 </h1>
 
@@ -9,7 +9,7 @@
 
     <div class="post-head">
       <div class="username">
-        <%= post.user.user_name %>
+        <%= @post.user.user_name %>
       </div>
     </div>
 
@@ -25,10 +25,15 @@
 </div>
 
 <div class="posts-wrapper">
-  <div class="text-center edit-links">
-    <%= link_to "Edit Post", edit_post_path(@post) %>
-  </div>
-  <div class="text-center">
-    <%= link_to "Cancel", posts_path %>
-  </div>
+  <% if @post.user.id == current_user.id %>
+    <div class="text-center edit-links">
+      <%= link_to "Cancel", posts_path %>
+      |
+      <%= link_to "Edit Post", edit_post_path(@post) %>
+    </div>
+  <% else %>
+    <div class="text-center edit-links">
+      <%= link_to "Cancel", posts_path %>
+    </div>
+  <% end %>
 </div>
