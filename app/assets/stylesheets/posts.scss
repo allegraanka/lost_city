@@ -2,11 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Inconsolata', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .lost_city_logo {
   width: 200px;
+}
+
+.lost_city_landing {
+  width: 650px;
+}
+
+.nav_list {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .posts-wrapper {
