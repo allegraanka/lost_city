@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
   font-family: 'Inconsolata', monospace;
+  background-color: #FEFCFC;
+  color: #1f2021;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,12 +14,23 @@ body {
   width: 200px;
 }
 
+.logo_div {
+  border: 2px solid #54aac9;
+  border-radius: 5px;
+}
+
 .lost_city_landing {
+  border: 3.5px groove #54aac9;
+  border-radius: 30px;
   width: 650px;
 }
 
 .nav_list {
   list-style-type: none;
+}
+
+.nav_list li {
+  display: inline;
 }
 
 a {
@@ -31,35 +44,10 @@ a {
   width: 100%;
 }
 
-.post {
-  background-color: #fff;
-  border-color: #edeeee;
-  border-style: solid;
-  border-radius: 3px;
-  border-width: 1px;
-  margin-bottom: 60px;
-}
-
-.post-head {
-  height: 64px;
-  padding: 14px 20px;
-  color: #125688;
-  font-size: 15px;
-  line-height: 18px;
-  .thumbnail {}
-  .username {
-  display: block;
-  }
-}
-
-.image {
-  border-bottom: 1px solid #eeefef;
-  border-top: 1px solid #eeefef;
-}
-
 .caption {
   padding: 24px 24px;
   font-size: 15px;
+  color: #FEFCFC;
   line-height: 18px;
 }
 
@@ -81,4 +69,93 @@ a {
   height: 64px;
   padding: 14px 20px;
   color: #125688;
+}
+
+.post {
+  border: 1px solid #54aac9;
+  border-radius: 3px;
+  margin-bottom: 60px;
+  .post-head {
+    background-color: #1f2021;
+    flex-direction: row;
+    height: 64px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 24px;
+    font-size: 18px;
+    line-height: 18px;
+    .user-name, .time-ago {
+      display: inline;
+    }
+    .user-name {
+      color: #54aac9;
+      font-weight: 500;
+    }
+    .time-ago {
+      color: #FEFCFC;
+      float: right;
+    }
+  }
+  .image {
+    border-bottom: 1px solid #eeefef;
+    border-top: 1px solid #eeefef;
+  }
+}
+
+.post-foot {
+  background-color: #1f2021;
+  .user-name, .comment-content {
+    display: inline;
+  }
+  .caption {
+    margin-bottom: 7px;
+    border-bottom: 2px solid #54aac9;
+  }
+  .user-name {
+    font-weight: 500;
+    margin-right: 0.3em;
+    color: #54aac9;
+    font-size: 18px;
+  }
+  .comment-content {
+    color: white;
+  }
+  .user-name, .caption-content {
+    display: inline;
+  }
+  #comment {
+    margin-top: 7px;
+    .user-name {
+      font-weight: 500;
+      margin-left: 0.3em;
+    }
+    .delete-comment {
+      float: right;
+      color: gray;
+    }
+  }
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 10px;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.comment_content {
+  font-size: 15px;
+  line-height: 18px;
+  border: medium none;
+  width: 100%;
+  color: white;
+}
+
+.comment-form-box {
+  background-color: #54aac9;
+  color: #1f2021;
+  width: 350px;
+  height: 25px;
+  margin-top: 10px;
+  border-radius: 10px;
+  line-height: 9px;
 }

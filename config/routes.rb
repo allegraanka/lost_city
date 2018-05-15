@@ -4,7 +4,10 @@ Rails.application.routes.draw do
     registrations: 'registrations',
     sessions: 'users/sessions'
   }
-  resources :posts
+
+  resources :posts do
+    resources :comments
+  end
 
   root 'posts#index'
 end
