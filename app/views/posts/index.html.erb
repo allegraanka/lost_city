@@ -2,24 +2,44 @@
 <h3> your posts thread: </h3>
 
 <div class="posts-wrapper row">
-
   <% @posts.each do |post| %>
     <div class="post">
       <div class="post-head">
-        <div class="username">
+        <div class="user-name">
           <%= post.user.user_name %>
+        </div>
+        <div class="time-ago">
+          <%= "posted #{time_ago_in_words(post.created_at)}" %>
         </div>
       </div>
       <div class="image center-block">
         <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
       </div>
-      <p class="caption">
-        <%= post.caption %> <br />
-      </p>
-      <p class="caption">
-        <%= "posted #{time_ago_in_words(post.created_at)}" %>
-      </p>
-    </div>
-  <% end %>
-
+      <div class="post-foot">
+        <p class="caption">
+          <%= post.caption %> <br />
+        </p>
+        <% if post.comments %>
+          <% post.comments.each do |comment| %>
+            <div id="comment" class="comment">
+              <div class="user-name">
+                <%= comment.user.user_name %>
+              </div>
+              <div class="comment-content">
+                <%= comment.content %>
+              </div>
+              <% if comment.user == current_user %>
+                <%= link_to post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+        <div class="comment-form">
+          <%= form_for [post, post.comments.new] do |f| %>
+            <%= f.text_field :content, placeholder: 'Add a comment...', class: "comment-form-box" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
