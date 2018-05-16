@@ -1,0 +1,2 @@
+$('#comments_<%= @post.id %>').append("<%=j render 'posts/comment-input', post: @post, comment: @comment %>");
+$('#comment-form-box_<%= @post.id %>').val('')
