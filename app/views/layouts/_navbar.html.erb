@@ -1,19 +1,22 @@
 <% if user_signed_in? %>
   <nav class="navbar">
-    <div class="logo_div">
-      <%= link_to (image_tag "lost_city_logo.jpg", class: "lost_city_logo"), root_path %>
-    </div>
-    <ul class="nav_list">
-      <li> <%= link_to "New Post", new_post_path %> </li>
-      <li> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </li>
+    <ul class="nav-list">
+      <li class="nav-list-items">
+        <div class="logo_div">
+          <%= link_to (image_tag "lost_city_logo.jpg", class: "lost_city_logo"), root_path %>
+        </div>
+      </li>
     </ul>
   </nav>
 <% else %>
   <div class="landing-div">
     <%= link_to (image_tag "lost_city_logo.jpg", class: "lost_city_landing"), root_path %>
   </div>
+  <div class="tagline">
+    a social urbex platform for sharing visual stories. capture spontaneous adventure and ephemeral beauty in your city
+  </div>
   <div class="landing-buttons">
-    <ul class="nav_list">
+    <ul class="nav-list">
       <li> <%= link_to "Sign In", new_user_session_path %> </li>
       <li> <%= link_to "Sign Up", new_user_registration_path %> </li>
     </ul>

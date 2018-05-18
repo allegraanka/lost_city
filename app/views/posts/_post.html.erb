@@ -1,35 +1,35 @@
-<div class="posts-wrapper row">
-  <% @posts.each do |post| %>
-    <div class="post">
-      <div class="post-head">
-        <div class="user-name">
-          <%= post.user.user_name %>
+  <div class="posts-wrapper row">
+    <% @posts.each do |post| %>
+      <div class="post">
+        <div class="post-head">
+          <div class="user-name">
+            <%= post.user.user_name %>
+          </div>
+          <div class="time-ago">
+            <%= "posted #{time_ago_in_words(post.created_at)}" %>
+          </div>
         </div>
-        <div class="time-ago">
-          <%= "posted #{time_ago_in_words(post.created_at)}" %>
+        <div class="image center-block">
+          <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
         </div>
-      </div>
-      <div class="image center-block">
-        <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
-      </div>
-      <div class="post-foot">
-        <p class="caption">
-          <%= post.caption %> <br />
-        </p>
-        <% if post.comments %>
-        <div class="comments" id="comments_<%= post.id %>">
-          <% post.comments.each do |comment| %>
-            <%= render "comment-input", comment: comment, post: post %> <!-- comments partial for ujs -->
-          <% end %>
-        </div>
-        <% end %>
-        <div class="comment-form">
-            <%= form_for([post, post.comments.build], remote: true) do |f| %>
-              <%= f.text_field :content, placeholder: 'Add a comment...', class: "comment-form-box", id: "comment-form-box_#{post.id}" %>
-              <%= f.submit "post comment", data: { disable_with: "posting..." } %>
+        <div class="post-foot">
+          <p class="caption">
+            <%= post.caption %> <br />
+          </p>
+          <% if post.comments %>
+          <div class="comments" id="comments_<%= post.id %>">
+            <% post.comments.each do |comment| %>
+              <%= render "comment-input", comment: comment, post: post %> <!-- comments partial for ujs -->
             <% end %>
+          </div>
+          <% end %>
+          <div class="comment-form">
+              <%= form_for([post, post.comments.build], remote: true) do |f| %>
+                <%= f.text_field :content, placeholder: 'Add a comment...', class: "comment-form-box", id: "comment-form-box_#{post.id}" %>
+                <%= f.submit "post comment", data: { disable_with: "posting..." } %>
+              <% end %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
