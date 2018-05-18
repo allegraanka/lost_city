@@ -1,4 +1,7 @@
-<h1> hi, <%= @current_user.user_name %> </h1>
-<h3> your posts thread: </h3>
+<div class="user-strip">
+  <h1> hi, <%= @current_user.user_name %> </h1>
+  <%= link_to "New Post", new_post_path, style: "margin-right: 15px" %>
+  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+</div>
 
 <%= render "post", post: @post %> <!-- post form partial -->

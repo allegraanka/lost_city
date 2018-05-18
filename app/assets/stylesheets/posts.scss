@@ -12,29 +12,37 @@ body {
 
 .lost_city_logo {
   width: 200px;
-}
-
-.logo_div {
-  border: 2px solid #54aac9;
-  border-radius: 5px;
+  border-radius: 20px;
+  border: 3px solid #54aac9;
 }
 
 .lost_city_landing {
   border: 3.5px groove #54aac9;
   border-radius: 30px;
-  width: 650px;
+  width: 70vw;
 }
 
-.nav_list {
+.tagline {
+  padding: 5px;
+  margin: 15px;
+  font-size: 20px;
+}
+
+.nav-list {
   list-style-type: none;
 }
 
-.nav_list li {
-  display: inline;
+.nav-list li {
+  display: inline-block;
 }
 
 a {
   text-decoration: none;
+  color: #FEFCFC;
+}
+
+a:hover {
+  text-decoration: line-through;
 }
 
 .posts-wrapper {
@@ -71,12 +79,21 @@ a {
   color: #125688;
 }
 
+.user-strip {
+  background-color: #54aac9;
+  color: #FEFCFC;
+  border: 2px solid #1f2021;
+  padding: 10px;
+  width: 50vw;
+}
+
 .post {
-  border: 1px solid #54aac9;
   border-radius: 3px;
+  border: 1px solid #FEFCFC;
   margin-bottom: 60px;
   .post-head {
     background-color: #1f2021;
+    margin-top: 60px;
     flex-direction: row;
     height: 64px;
     padding-left: 24px;
@@ -97,49 +114,46 @@ a {
     }
   }
   .image {
-    border-bottom: 1px solid #eeefef;
-    border-top: 1px solid #eeefef;
   }
-}
-
-.post-foot {
-  background-color: #1f2021;
-  .user-name, .comment-content {
-    display: inline;
-  }
-  .caption {
-    margin-bottom: 7px;
-    border-bottom: 2px solid #54aac9;
-  }
-  .user-name {
-    font-weight: 500;
-    margin-right: 0.3em;
-    color: #54aac9;
-    font-size: 18px;
-  }
-  .comment-content {
-    color: white;
-  }
-  .user-name, .caption-content {
-    display: inline;
-  }
-  #comment {
-    margin-top: 7px;
+  .post-foot {
+    background-color: #1f2021;
+    .user-name, .comment-content {
+      display: inline;
+    }
+    .caption {
+      margin-bottom: 7px;
+      border-bottom: 2px solid #54aac9;
+    }
     .user-name {
       font-weight: 500;
-      margin-left: 0.3em;
+      margin-right: 0.3em;
+      color: #54aac9;
+      font-size: 18px;
     }
-    .delete-comment {
-      float: right;
-      color: gray;
+    .comment-content {
+      color: white;
     }
+    .user-name, .caption-content {
+      display: inline;
+    }
+    #comment {
+      margin-top: 7px;
+      .user-name {
+        font-weight: 500;
+        margin-left: 0.3em;
+      }
+      .delete-comment {
+        float: right;
+        color: gray;
+      }
+    }
+    padding-top: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    line-height: 18px;
   }
-  padding-top: 24px;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-bottom: 10px;
-  font-size: 15px;
-  line-height: 18px;
 }
 
 .comment_content {
@@ -147,7 +161,7 @@ a {
   line-height: 18px;
   border: medium none;
   width: 100%;
-  color: white;
+  color: #FEFCFC;
 }
 
 .comment-form-box {
@@ -158,4 +172,27 @@ a {
   margin-top: 10px;
   border-radius: 10px;
   line-height: 9px;
+}
+
+// media queries for tablet, mobile
+
+@media screen and (min-width: 480px) {
+    body {
+        background-color: #1f2021;
+        color: #54aac9;
+    }
+
+    .lost_city_logo {
+      width: 25vw;
+      border-radius: 20px;
+      border: 3px solid #54aac9;
+    }
+
+    .user-strip {
+      background-color: #54aac9;
+      color: #FEFCFC;
+      border: 1px solid #FEFCFC;
+      padding: 10px;
+      width: 50vw;
+    }
 }

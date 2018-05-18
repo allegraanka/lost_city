@@ -4,9 +4,6 @@ before_action :set_post, except: :create
 
 def create
     @post = Post.find(params[:post_id])
-    p '**********'
-    p params
-    p @post
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
 
