@@ -89,37 +89,46 @@ a:hover {
 
 .post {
   border-radius: 3px;
-  border: 1px solid #FEFCFC;
   margin-bottom: 60px;
-  .post-head {
-    background-color: #1f2021;
-    margin-top: 60px;
-    flex-direction: row;
-    height: 64px;
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-top: 24px;
-    font-size: 18px;
-    line-height: 18px;
-    .user-name, .time-ago {
-      display: inline;
-    }
-    .user-name {
-      color: #54aac9;
-      font-weight: 500;
-    }
-    .time-ago {
-      color: #FEFCFC;
-      float: right;
-    }
+}
+
+.post-head {
+  background-color: #1f2021;
+  margin-top: 60px;
+  flex-direction: row;
+  height: 64px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 24px;
+  font-size: 18px;
+  line-height: 18px;
+  border: 1px dotted #54aac9;
   }
-  .image {
+
+.user-name, .time-ago {
+  display: inline;
+}
+
+.user-name {
+  color: #54aac9;
+  font-weight: 500;
+}
+
+.time-ago {
+  color: #FEFCFC;
+  float: right;
+}
+
+.image {
+  width: 70vw;
+}
+
+.post-foot {
+  background-color: #1f2021;
+  border: 1px dotted #54aac9;
+  .user-name, .comment-content {
+    display: inline;
   }
-  .post-foot {
-    background-color: #1f2021;
-    .user-name, .comment-content {
-      display: inline;
-    }
     .caption {
       margin-bottom: 7px;
       border-bottom: 2px solid #54aac9;
@@ -154,7 +163,6 @@ a:hover {
     font-size: 15px;
     line-height: 18px;
   }
-}
 
 .comment_content {
   font-size: 15px;

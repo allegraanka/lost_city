@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     registrations: 'registrations',
     sessions: 'users/sessions'
   }
+  resources :users, only: [:index, :show]
+  match 'users/:id' => 'users#show', via: :get
+  get 'users/:id' => 'users#show'
 
   resources :posts do
     resources :comments
