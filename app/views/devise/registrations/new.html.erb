@@ -1,18 +1,33 @@
-<h2>Sign Up</h2>
+<div class="sign-up hidden" id="sign-up">
+<h1>create an account</h1>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :user_name, required: true %>
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
-  </div>
+    <div class="form-input-container">
+      <div class="form-input"> <%= f.input :user_name, required: true, placeholder: 'u s e r n a m e', input_html: { class: 'input-lg' } %> </div>
+      <div class="form-input"> <%= f.input :email, required: true, autofocus: true, placeholder: 'e m a i l', input_html: { class: 'input-lg' } %> </div>
+      <div class="form-input"> <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: 'e n t e r  p a s s w o r d', input_html: { class: 'input-lg' } %> </div>
+      <div class="form-input"> <%= f.input :password_confirmation, required: true, placeholder: 'p a s s w o r d  a g a i n', input_html: { class: 'input-lg' } %> </div>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign Up" %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit, "sign up", class: 'btn-lg' %>
+    </div>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>
+
+<script>
+  var signUpButton = document.getElementById('signUpButton');
+  var signInButton = document.getElementById('signInButton');
+
+  signUpButton.onclick = function() {
+    console.log('create an account click works');
+  }
+
+  signInButton.onclick = function() {
+    console.log('sign in click works');
+  }
+</script>

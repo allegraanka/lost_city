@@ -11,15 +11,23 @@
 
   <body>
 
-  <%= render 'layouts/navbar' %>
+    <%= render 'layouts/navbar' %>
 
-  <section>
-    <div>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
-    </div>
-  </section>
+    <section>
+      <div>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </div>
+    </section>
+
+    <!-- <center>
+      <div class="goto-top">
+        <a href="#" title="Go to top of page">
+          <div class="up-arrow up-arrow-small">▲</div>
+        </a>
+      </div>
+    </center> -->
 
   </body>
 </html>
