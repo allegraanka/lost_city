@@ -1,32 +1,53 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 body {
   font-family: 'Inconsolata', monospace;
-  background-color: #FEFCFC;
-  color: #1f2021;
+  background-color: #1f2021;
+  color: #54aac9;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+h1 {
+  color: #FEFCFC;
+}
+
 .lost_city_logo {
-  width: 200px;
+  position: fixed;
+  top: 3%;
+  left: 2%;
+  width: 12vw;
   border-radius: 20px;
   border: 3px solid #54aac9;
 }
 
 .lost_city_landing {
-  border: 3.5px groove #54aac9;
+  border: 5px solid #54aac9;
   border-radius: 30px;
-  width: 70vw;
+  width: 60vw;
 }
 
 .tagline {
   padding: 5px;
   margin: 15px;
   font-size: 20px;
+  color: #FEFCFC;
 }
+
+.landing-buttons {
+  font-size: 30px;
+}
+
+.landing-buttons a {
+  margin: 0 15px;
+}
+
+// .hidden {
+//   display: none;
+// }
 
 .nav-list {
   list-style-type: none;
@@ -38,7 +59,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #FEFCFC;
+  color: #54aac9;
 }
 
 a:hover {
@@ -46,6 +67,9 @@ a:hover {
 }
 
 .posts-wrapper {
+  position: absolute;
+  left: 45%;
+  border-radius: 20px;
   padding-top: 40px;
   margin: 0 auto;
   max-width: 642px;
@@ -54,8 +78,8 @@ a:hover {
 
 .caption {
   padding: 24px 24px;
-  font-size: 15px;
-  color: #FEFCFC;
+  font-size: 20px;
+  color: #1f2021;
   line-height: 18px;
 }
 
@@ -68,23 +92,33 @@ a:hover {
   border-radius: 3px;
 }
 
-.edit-links {
-  margin-top: 20px;
-  margin-bottom: 40px;
+.form-input {
+  padding: 5px;
+  margin: 5px;
 }
 
 .np_image, .np_caption {
   height: 64px;
   padding: 14px 20px;
-  color: #125688;
+  color: #1f2021;
 }
 
+// user-strip is the user's nav bar
 .user-strip {
-  background-color: #54aac9;
+  position: fixed;
+  top: 24%;
+  left: 2%;
   color: #FEFCFC;
-  border: 2px solid #1f2021;
-  padding: 10px;
-  width: 50vw;
+  border: 2px solid #FEFCFC;
+  text-align: center;
+  border-radius: 20px;
+  padding: 20px 10px;
+  width: 25vw;
+}
+
+.user-strip a {
+  color: #FEFCFC;
+  font-size: 22px;
 }
 
 .post {
@@ -93,7 +127,7 @@ a:hover {
 }
 
 .post-head {
-  background-color: #1f2021;
+  background-color: #FEFCFC;
   margin-top: 60px;
   flex-direction: row;
   height: 64px;
@@ -102,21 +136,18 @@ a:hover {
   padding-top: 24px;
   font-size: 18px;
   line-height: 18px;
-  border: 1px dotted #54aac9;
+  border: 5px double #54aac9;
+  .user-name, .time-ago {
+    display: inline;
   }
-
-.user-name, .time-ago {
-  display: inline;
-}
-
-.user-name {
-  color: #54aac9;
-  font-weight: 500;
-}
-
-.time-ago {
-  color: #FEFCFC;
-  float: right;
+  .user-name {
+    color: #54aac9;
+    font-weight: 500;
+  }
+  .time-ago {
+    color: #1f2021;
+    float: right;
+  }
 }
 
 .image {
@@ -124,8 +155,8 @@ a:hover {
 }
 
 .post-foot {
-  background-color: #1f2021;
-  border: 1px dotted #54aac9;
+  background-color: #FEFCFC;
+  border: 5px double #54aac9;
   .user-name, .comment-content {
     display: inline;
   }
@@ -140,7 +171,7 @@ a:hover {
       font-size: 18px;
     }
     .comment-content {
-      color: white;
+      color: #1f2021;;
     }
     .user-name, .caption-content {
       display: inline;
@@ -169,12 +200,12 @@ a:hover {
   line-height: 18px;
   border: medium none;
   width: 100%;
-  color: #FEFCFC;
+  color: #1f2021;
 }
 
 .comment-form-box {
   background-color: #54aac9;
-  color: #1f2021;
+  color: #FEFCFC;
   width: 350px;
   height: 25px;
   margin-top: 10px;
@@ -182,25 +213,26 @@ a:hover {
   line-height: 9px;
 }
 
-// media queries for tablet, mobile
+.photo-caption {
+  color: #FEFCFC;
+}
 
-@media screen and (min-width: 480px) {
+.edit-form {
+  background-color: #FEFCFC;
+  border: 3px solid #54aac9;
+  border-radius: 20px;
+  padding: 5%;
+}
+
+.edit-links {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+// media queries for tablet, mobile sizes
+
+@media screen and (max-width: 480px) {
     body {
-        background-color: #1f2021;
-        color: #54aac9;
-    }
-
-    .lost_city_logo {
-      width: 25vw;
-      border-radius: 20px;
-      border: 3px solid #54aac9;
-    }
-
-    .user-strip {
-      background-color: #54aac9;
-      color: #FEFCFC;
-      border: 1px solid #FEFCFC;
-      padding: 10px;
-      width: 50vw;
+      background-color: #FEFCFC;
     }
 }

@@ -1,8 +1,15 @@
 <div class="user-strip">
   <h1> hi, <%= @current_user.user_name %> </h1>
-  <%= link_to "New Post", new_post_path, style: "margin-right: 15px" %>
-  <%= link_to "See Users", users_path, style: "margin-right: 15px" %>
-  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+  <%= link_to "new post", new_post_path, style: "margin-right: 15px" %>
+  <%= link_to "community", users_path, style: "margin-right: 15px" %>
+  <%= link_to "sign out", destroy_user_session_path, method: :delete %>
+</div>
+
+<div>
+  <% @response.each do |f| %>
+    <%= f['latitude'] %>
+    <%= f['longitude'] %>
+  <% end %>
 </div>
 
 <%= render "post", post: @post %> <!-- post form partial -->
