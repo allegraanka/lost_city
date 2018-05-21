@@ -3,15 +3,20 @@ Rails.application.routes.draw do
     registrations: 'registrations',
     sessions: 'users/sessions'
   }
-  resources :users, only: [:index, :show]
+
+  root 'posts#index'
+
+
+  resources :users, only: [:index, :show, :update]
   match 'users/:id' => 'users#show', via: :get
   get 'users/:id' => 'users#show'
+  get '/edit/bio' => 'users#edit_bio'
+  get '/edit/bio' => 'users#update'
 
   resources :posts do
     resources :comments
   end
 
-  root 'posts#index'
 end
 
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

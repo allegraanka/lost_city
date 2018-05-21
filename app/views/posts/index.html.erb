@@ -1,5 +1,8 @@
 <div class="user-strip">
-  <h1> hi, <%= @current_user.user_name %> </h1>
+  <ul>
+    <li class="user-strip-header"> <h1> hi, <%= @current_user.user_name %> </h1> </li>
+    <li class="user-strip-header edit-bio-link"> <%= link_to "edit bio", edit_bio_path, method: :get %> </li>
+  </ul>
   <%= link_to "new post", new_post_path, style: "margin-right: 15px" %>
   <%= link_to "community", users_path, style: "margin-right: 15px" %>
   <%= link_to "sign out", destroy_user_session_path, method: :delete %>
@@ -7,7 +10,7 @@
 
 <div class="sunrise-strip" id="sunrise_data">
   <p class="sunrise-p"> get those good golden hour photos </p>
-
+  <p id="date" class="date"> it's <span class="time-color"><%= Time.now.strftime('%I:%M:%S %Z')%></span> </p> <p id="time" class="time"> on <span class="date-color"><%= DateTime.now.strftime('%m/%d/%Y') %></span> </p>
     <% @response.each_with_index do |f, i| %>
       <% if @desired.include? f[0] %>
         <p> <%= "#{@column_names[i]}: #{f[1]}" %> </p>
@@ -16,3 +19,11 @@
 </div>
 
 <%= render "post", post: @post %> <!-- post form partial -->
+
+<center>
+    <div class="goto-top">
+      <a href="#" title="Go to top of page">
+        <div class="up-arrow up-arrow-small">to ▲ top</div>
+      </a>
+    </div>
+</center>

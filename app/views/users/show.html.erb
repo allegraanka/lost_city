@@ -1,5 +1,20 @@
 <div class="user-name">
   <h1> <%= @user.user_name %>'s gallery </h1>
+  <div class="user-bio">
+    <h3> about <%= @user.user_name %> </h3>
+    <%= @user.bio %>
+  </div>
 </div>
+
+  <div class="posts-wrapper row">
+      <% @posts.each do |post| %>
+        <div class="photo">
+          <div class="image center-block">
+            <%= image_tag post.image.url(:medium), style: 'border: 1px solid #FEFCFC' %>
+            <p> <%= post.caption %> </p>
+          </div>
+        </div>
+        <% end %>
+  </div>
 
 <%= link_to "<< back", :back %>
