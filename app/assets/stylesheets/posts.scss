@@ -121,6 +121,24 @@ a:hover {
   font-size: 22px;
 }
 
+.sunrise-strip {
+  position: fixed;
+  top: 44%;
+  left: 2%;
+  color: #54aac9;
+  border: 2px solid #FEFCFC;
+  text-align: center;
+  border-radius: 20px;
+  padding: 20px 10px;
+  width: 25vw;
+  overflow: auto;
+}
+
+.sunrise-strip a {
+  color: #FEFCFC;
+  font-size: 22px;
+}
+
 .post {
   border-radius: 3px;
   margin-bottom: 60px;
@@ -227,6 +245,10 @@ a:hover {
 .edit-links {
   margin-top: 20px;
   margin-bottom: 40px;
+}
+
+.sunrise-p {
+  text-transform: uppercase;
 }
 
 // media queries for tablet, mobile sizes
