@@ -5,10 +5,12 @@ class PostsController < ApplicationController
   before_action :owned_post, only: [:edit, :update, :destroy]
 
   def index
+    @desired = ['sunset', 'sunrise', 'day_length', 'civil_twilight_begin', 'civil_twilight_end']
+    @column_names = ['sunrise', 'sunset', '', 'day length', 'daybreak', 'darkness']
     @posts = Post.all.order("created_at DESC")
     @current_user = current_user
-    @sunrise_api = JSON.parse(@sunrise_api)
-    @response = @sunrise_api.select{|sunrise, sunset, solar_noon, day_length, civil_twilight_begin, civil_twilight_end, nautical_twilight_begin, nautical_twilight_end, astronomical_twilight_begin, astronomical_twilight_end|}
+    @sunrise_data = JSON.parse(sunrise_api)
+    @response = @sunrise_data['results']
   end
 
   def new

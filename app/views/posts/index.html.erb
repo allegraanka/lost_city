@@ -5,11 +5,14 @@
   <%= link_to "sign out", destroy_user_session_path, method: :delete %>
 </div>
 
-<div>
-  <% @response.each do |f| %>
-    <%= f['latitude'] %>
-    <%= f['longitude'] %>
-  <% end %>
+<div class="sunrise-strip" id="sunrise_data">
+  <p class="sunrise-p"> get those good golden hour photos </p>
+
+    <% @response.each_with_index do |f, i| %>
+      <% if @desired.include? f[0] %>
+        <p> <%= "#{@column_names[i]}: #{f[1]}" %> </p>
+      <% end %>
+    <% end %>
 </div>
 
 <%= render "post", post: @post %> <!-- post form partial -->

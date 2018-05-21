@@ -1,3 +1,7 @@
 <h1> post a photo </h1>
 
 <%= render 'form', locals: {post: @post, method: :post}  %>
+
+<div class="text-center edit-links">
+  <%= link_to "<< back to thread", posts_path %>
+</div>
