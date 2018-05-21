@@ -5,11 +5,6 @@
   <%= link_to "sign out", destroy_user_session_path, method: :delete %>
 </div>
 
-<div>
-  <% @response.each do |f| %>
-    <%= f['latitude'] %>
-    <%= f['longitude'] %>
-  <% end %>
-</div>
+<div id="sunrise_data"></div>
 
 <%= render "post", post: @post %> <!-- post form partial -->
