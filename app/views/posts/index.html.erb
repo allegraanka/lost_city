@@ -4,9 +4,10 @@
     <li class="user-strip-header"> <h1> hi, <%= @current_user.user_name %> </h1> </li>
     <li class="user-strip-header edit-bio-link"> <%= link_to "edit details", edit_bio_path, method: :get %> </li>
   </ul>
-  <%= link_to "new post", new_post_path, style: "margin-right: 15px" %>
-  <%= link_to "community", users_path, style: "margin-right: 15px" %>
-  <%= link_to "sign out", destroy_user_session_path, method: :delete %>
+  <%= link_to "About Lost City", '/static_pages/about', id: "about" %> <br />
+  <%= link_to "New Post", new_post_path, style: "margin-right: 15px" %>
+  <%= link_to "Community", users_path, style: "margin-right: 15px" %>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
 </div>
 
 <div class="sunrise-strip" id="sunrise_data">
