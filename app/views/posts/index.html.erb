@@ -2,7 +2,7 @@
 <div class="user-strip">
   <ul>
     <li class="user-strip-header"> <h1> hi, <%= @current_user.user_name %> </h1> </li>
-    <li class="user-strip-header edit-bio-link"> <%= link_to "edit bio", edit_bio_path, method: :get %> </li>
+    <li class="user-strip-header edit-bio-link"> <%= link_to "edit details", edit_bio_path, method: :get %> </li>
   </ul>
   <%= link_to "new post", new_post_path, style: "margin-right: 15px" %>
   <%= link_to "community", users_path, style: "margin-right: 15px" %>

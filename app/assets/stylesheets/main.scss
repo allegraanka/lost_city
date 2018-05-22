@@ -11,6 +11,12 @@ body {
   align-items: center;
 }
 
+// .blended {
+//   background-image: url(face.jpg);
+//   background-color: #1f2021;
+//   background-blend-mode: multiply;
+// }
+
 h1 {
   color: #FEFCFC;
 }
@@ -306,6 +312,7 @@ a:hover {
 
 .user-divide {
   border-bottom: 0.5px solid #FEFCFC;
+  padding: 1%;
 }
 
 .community-bio {
