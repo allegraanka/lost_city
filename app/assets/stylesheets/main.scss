@@ -9,13 +9,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background:#1f2021 url("cover.jpg") no-repeat center center;
+  background-blend-mode: overlay;
 }
-
-// .blended {
-//   background-image: url(face.jpg);
-//   background-color: #1f2021;
-//   background-blend-mode: multiply;
-// }
 
 h1 {
   color: #FEFCFC;
@@ -115,8 +111,8 @@ a:hover {
   top: 23%;
   left: 2%;
   color: #FEFCFC;
-  border: 2px solid #FEFCFC;
   text-align: center;
+  border: 2px solid #FEFCFC;
   border-radius: 20px;
   padding: 20px 10px;
   width: 25vw;
@@ -193,7 +189,7 @@ a:hover {
 }
 
 .image {
-  width: 70vw;
+  max-width: 50vw;
 }
 
 .post-foot {
