@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
+  get '/static_pages/about' => 'static_pages#about'
 
   resources :users, only: [:index, :show, :update]
   match 'users/:id' => 'users#show', via: :get

@@ -1,4 +1,4 @@
-<div class="sign-up hidden" id="sign-up">
+<div class="sign-up" id="sign-up">
 <h1>create an account</h1>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -18,16 +18,3 @@
 
   <%= render "devise/shared/links" %>
 </div>
-
-<script>
-  var signUpButton = document.getElementById('signUpButton');
-  var signInButton = document.getElementById('signInButton');
-
-  signUpButton.onclick = function() {
-    console.log('create an account click works');
-  }
-
-  signInButton.onclick = function() {
-    console.log('sign in click works');
-  }
-</script>
