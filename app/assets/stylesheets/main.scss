@@ -11,6 +11,12 @@ body {
   align-items: center;
 }
 
+// .blended {
+//   background-image: url(face.jpg);
+//   background-color: #1f2021;
+//   background-blend-mode: multiply;
+// }
+
 h1 {
   color: #FEFCFC;
 }
@@ -106,7 +112,7 @@ a:hover {
 // user-strip is the user's nav bar
 .user-strip {
   position: fixed;
-  top: 24%;
+  top: 23%;
   left: 2%;
   color: #FEFCFC;
   border: 2px solid #FEFCFC;
@@ -128,7 +134,7 @@ a:hover {
 // sunrise_api data section
 .sunrise-strip {
   position: fixed;
-  top: 50%;
+  top: 49%;
   left: 2%;
   color: #54aac9;
   border: 2px solid #FEFCFC;
@@ -306,6 +312,11 @@ a:hover {
 
 .user-divide {
   border-bottom: 0.5px solid #FEFCFC;
+  padding: 1%;
+}
+
+.community-bio {
+  color: #FEFCFC;
 }
 
 // media queries for tablet, mobile sizes

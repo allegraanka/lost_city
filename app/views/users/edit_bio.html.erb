@@ -1,16 +1,17 @@
 <section>
+  <h1> edit bio </h1>
   <div class="bio-form">
     <%= simple_form_for @user do |f| %>
       <div class="bio-content">
         <%= f.text_field :bio, class: "bio-text-field" %>
       </div>
-      <%= f.button :submit, value: "save changes" %>
+      <%= f.button :submit, value: "save changes", data: { confirm: "Are you sure you want to edit this content?" } %>
     <% end %>
 
     <div class="text-center edit-links">
-      <%= link_to "edit bio", edit_bio_path, method: :put, data: { confirm: "Are you sure you want to edit this content?" } %>
-      |
       <%= link_to "cancel", posts_path %>
     </div>
   </div>
+  <h1> delete account </h1>
+  <%= link_to "delete", user_registration_path, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
 </section>
