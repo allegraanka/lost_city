@@ -286,6 +286,28 @@ a:hover {
 .user-strip-header {
   display: inline-block;
 }
+
+// styles on the lost city community page below
+
+.community-usernames-section {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  min-height: 30vw;
+  min-width: 30vw;
+  border: 2px solid #FEFCFC;
+  text-align: center;
+  border-radius: 20px;
+  overflow: auto;
+}
+
+.display-block {
+  display: block;
+}
+
+.user-divide {
+  border-bottom: 0.5px solid #FEFCFC;
+}
+
 // media queries for tablet, mobile sizes
 
 @media screen and (max-width: 480px) {
