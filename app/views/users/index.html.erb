@@ -5,7 +5,7 @@
   <% @users.each do |user| %>
     <div class="user-divide">
       <h2> <%= link_to user.user_name, user, class: "display-block" %> </h2>
-      <p> <%= user.bio %> </p>
+      <p class="community-bio"> <%= user.bio %> </p>
     </div>
   <% end %>
 </section>
