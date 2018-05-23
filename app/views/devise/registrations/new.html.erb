@@ -1,18 +1,31 @@
 <div class="sign-up" id="sign-up">
-<h1>create an account</h1>
+<h1>Create an Account</h1>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
-    <div class="form-input-container">
-      <div class="form-input"> <%= f.input :user_name, required: true, placeholder: 'u s e r n a m e', input_html: { class: 'input-lg' } %> </div>
-      <div class="form-input"> <%= f.input :email, required: true, autofocus: true, placeholder: 'e m a i l', input_html: { class: 'input-lg' } %> </div>
-      <div class="form-input"> <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: 'e n t e r  p a s s w o r d', input_html: { class: 'input-lg' } %> </div>
-      <div class="form-input"> <%= f.input :password_confirmation, required: true, placeholder: 'p a s s w o r d  a g a i n', input_html: { class: 'input-lg' } %> </div>
+    <div class="form-input-container row">
+      <div class="col-md-4">
+        <div class="form-input form-group">
+          <%= f.input_field :user_name, required: true, placeholder: 'u s e r n a m e', class: 'input' %>
+        </div>
+
+        <div class="form-input form-group">
+          <%= f.email_field :email, required: true, autofocus: true, placeholder: 'e m a i l', class: 'input' %>
+        </div>
+
+        <div class="form-input form-group">
+          <%= f.password_field :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: 'e n t e r  p a s s w o r d', class: 'input' %>
+        </div>
+
+        <div class="form-input form-group">
+          <%= f.password_field :password_confirmation, required: true, placeholder: 'p a s s w o r d  a g a i n', class: 'input' %>
+        </div>
+      </div>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "sign up", class: 'btn-lg' %>
+      <%= f.button :submit, "Sign Up", class: 'button' %>
     </div>
   <% end %>
 

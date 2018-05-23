@@ -47,10 +47,6 @@ h1 {
   margin: 0 15px;
 }
 
-// .hidden {
-//   display: none;
-// }
-
 .nav-list {
   list-style-type: none;
 }
@@ -94,9 +90,24 @@ a:hover {
   border-radius: 3px;
 }
 
-.form-input {
-  padding: 5px;
-  margin: 5px;
+.input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #54aac9;
+  border-radius: 4px;
+}
+
+.button {
+  background-color: #54aac9;
+  border: 3px solid #eeefef;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .np_image, .np_caption {

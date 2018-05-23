@@ -1,16 +1,27 @@
 <div class="sign-in hidden" id="sign-in">
   <div id="signInModal" class="show-modal modal">
-    <h1> sign in </h1>
+    <h1> Sign In </h1>
 
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-input-container">
-        <div class="form-input"> <%= f.input :email, required: true, autofocus: true, placeholder: 'e n t e r  e m a i l' %> </div>
-        <div class="form-input"> <%= f.input :password, required: true, placeholder: 'e n t e r  p a s s w o r d' %> </div>
-        <div class="form-input"> <%= f.input_field :remember_me, as: :boolean, boolean_style: :inline if devise_mapping.rememberable? %> </div>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-horizontal") do |f| %>
+      <div class="form-input-container row">
+        <div class="col-md-4">
+          <div class="form-input">
+            <%= f.email_field :email, required: true, autofocus: true, placeholder: 'e n t e r  e m a i l', class: 'input' %>
+          </div>
+
+          <div class="form-input">
+            <%= f.password_field :password, required: true, placeholder: 'e n t e r  p a s s w o r d', class: 'input' %>
+          </div>
+
+          <div class="form-input">
+            <%= f.input_field :remember_me, as: :boolean, boolean_style: :inline if devise_mapping.rememberable? %>
+            Remember me!
+          </div>
+        </div>
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "sign in" %>
+        <%= f.button :submit, "Sign In", class: 'button' %>
       </div>
     <% end %>
 
