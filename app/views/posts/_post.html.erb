@@ -26,7 +26,7 @@
           <div class="comment-form">
               <%= form_for([post, post.comments.build], remote: true) do |f| %>
                 <%= f.text_field :content, placeholder: 'Add a comment...', class: "comment-form-box", id: "comment-form-box_#{post.id}" %>
-                <%= f.submit "post comment", data: { disable_with: "posting..." } %>
+                <%= f.submit "Post Comment", data: { disable_with: "posting..." }, class: 'button' %>
               <% end %>
           </div>
         </div>
